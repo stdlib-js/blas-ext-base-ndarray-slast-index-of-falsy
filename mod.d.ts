@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,17 +16,28 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { float32ndarray, typedndarray } from '@stdlib/types/ndarray';
 
 /**
-* Return the index of the last falsy element in a one-dimensional single-precision floating-point ndarray.
+* Returns the index of the last falsy element in a one-dimensional single-precision floating-point ndarray.
 *
-* @module @stdlib/blas-ext-base-ndarray-slast-index-of-falsy
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*     -   a zero-dimensional ndarray containing the index from which to begin searching.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns index
 *
 * @example
 * var Float32Vector = require( '@stdlib/ndarray-vector-float32' );
 * var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
-* var slastIndexOfFalsy = require( '@stdlib/blas-ext-base-ndarray-slast-index-of-falsy' );
 *
 * var x = new Float32Vector( [ 1.0, 0.0, 3.0, 0.0 ] );
 *
@@ -37,12 +48,9 @@
 * var v = slastIndexOfFalsy( [ x, fromIndex ] );
 * // returns 3
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function slastIndexOfFalsy( arrays: [ float32ndarray, typedndarray<number> ] ): number;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = slastIndexOfFalsy;
